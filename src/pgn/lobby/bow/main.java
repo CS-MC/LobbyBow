@@ -55,7 +55,7 @@ public class main extends JavaPlugin implements Listener {
 			String[] args ) {
 		Player player = (Player) sender;
         if(cmd.getName().equalsIgnoreCase("vipbow")){
-        	if (player.hasPermission("network.vip")) {	
+        	if (player.hasPermission("vip.bow")) {	
     			Bow.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 10);
     			player.getInventory().addItem(new ItemStack[] { Bow });
     			player.getInventory().addItem(new ItemStack[] { Arrow });
