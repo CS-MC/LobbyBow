@@ -1,6 +1,6 @@
 name: Lobbybow
 main: pgn.lobby.bow.main
-version: 0.1a
+version: 1.0-PGN-R256
 author: [Aussie_Jhawking]
 commands:
    bow:
