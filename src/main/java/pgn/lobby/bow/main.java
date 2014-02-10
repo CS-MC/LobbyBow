@@ -88,7 +88,9 @@ public class main extends JavaPlugin implements Listener {
 	}
 
 
-	  @EventHandler public void onBowShoot(EntityShootBowEvent event) {
+	  //Adding permissions for this event soon.
+	  @EventHandler 
+	  public void onBowShoot(EntityShootBowEvent event) {
 	  FireworkMeta fireworkMeta = (FireworkMeta) (new ItemStack(
 	  Material.FIREWORK)).getItemMeta(); Firework firework = (Firework) event
 	  .getProjectile() .getLocation() .getWorld()
