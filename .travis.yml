@@ -1,2 +1,5 @@
-LobbyBow
-========
+language: java
+install: ant deps
+jdk:
+  - oraclejdk7
+  - openjdk6
