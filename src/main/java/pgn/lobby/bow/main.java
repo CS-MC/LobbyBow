@@ -88,20 +88,24 @@ public class main extends JavaPlugin implements Listener {
 	}
 
 
-	  //Adding permissions for this event soon.
 	  @EventHandler 
 	  public void onBowShoot(EntityShootBowEvent event) {
-	  FireworkMeta fireworkMeta = (FireworkMeta) (new ItemStack(
-	  Material.FIREWORK)).getItemMeta(); Firework firework = (Firework) event
-	  .getProjectile() .getLocation() .getWorld()
-	 .spawnEntity(event.getProjectile().getLocation(), EntityType.FIREWORK);
-	 
-	  fireworkMeta.addEffect(FireworkEffect.builder().with(Type.BURST)
-	  .withColor(Color.RED).withColor(Color.WHITE)
-	  .withColor(Color.BLUE).withColor(Color.PURPLE).withTrail() .build());
-	  firework.setFireworkMeta(fireworkMeta);
-       event.getProjectile().setPassenger(firework); }
-	  
+    	Player player = (Player) event.getEntity();
+    	if(player.hasPermission("fw.bow")){
+    		
+    		 FireworkMeta fireworkMeta = (FireworkMeta) (new ItemStack(
+    				  Material.FIREWORK)).getItemMeta(); Firework firework = (Firework) event
+    				  .getProjectile() .getLocation() .getWorld()
+    				 .spawnEntity(event.getProjectile().getLocation(), EntityType.FIREWORK);
+    				 
+    				  fireworkMeta.addEffect(FireworkEffect.builder().with(Type.BURST)
+    				  .withColor(Color.RED).withColor(Color.WHITE)
+    				  .withColor(Color.BLUE).withColor(Color.PURPLE).withTrail() .build());
+    				  firework.setFireworkMeta(fireworkMeta);
+    			     event.getProjectile().setPassenger(firework);
+    		
+    	}
+	  }
 
 
 	
