@@ -1,4 +1,4 @@
 LobbyBow
 ========
 
-XeXNetwork Open Source Plugin!
+XeXNetwork Open Source VIP Bow Plugin!
