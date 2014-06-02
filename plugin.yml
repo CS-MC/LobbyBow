@@ -1,0 +1,11 @@
+name: FireWorkBow
+version: 1.0
+main: fwbow.Core
+author: Aussie_Jhawking
+description: FireWork Bow!
+
+
+commands:
+    vipbow:
+       usage: /<command>
+       description: fwbow

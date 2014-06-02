@@ -1,9 +1,0 @@
-name: Lobbybow
-main: pgn.lobby.bow.main
-version: 1.0-PGN-R256
-author: [Aussie_Jhawking]
-commands:
-   bow:
-      description: Donator Bow.
-      permission: vip.bow
-      permission-message: §cThis is a donator perk!

@@ -1,10 +1,11 @@
-package pgn.lobby.bow;
+package fwbow;
 
 import java.util.ArrayList;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.FireworkEffect.Type;
 import org.bukkit.command.Command;
@@ -21,16 +22,16 @@ import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class main extends JavaPlugin implements Listener {
+public class Core extends JavaPlugin implements Listener {
 
-	
 
-	
+
+
 	  final java.util.HashMap<Long, Long> shows = new java.util.HashMap<Long, Long>();
       final java.util.List<org.bukkit.FireworkEffect.Type> types = new java.util.ArrayList<org.bukkit.FireworkEffect.Type>(java.util.Arrays.asList(org.bukkit.FireworkEffect.Type.BALL, org.bukkit.FireworkEffect.Type.BALL_LARGE, org.bukkit.FireworkEffect.Type.BURST, org.bukkit.FireworkEffect.Type.STAR, org.bukkit.FireworkEffect.Type.CREEPER));
       final java.util.List<org.bukkit.Color> colours = new java.util.ArrayList<org.bukkit.Color>(java.util.Arrays.asList(org.bukkit.Color.AQUA, org.bukkit.Color.BLACK, org.bukkit.Color.BLUE, org.bukkit.Color.FUCHSIA, org.bukkit.Color.GRAY, org.bukkit.Color.GREEN, org.bukkit.Color.LIME, org.bukkit.Color.MAROON, org.bukkit.Color.NAVY, org.bukkit.Color.OLIVE, org.bukkit.Color.ORANGE, org.bukkit.Color.PURPLE, org.bukkit.Color.RED, org.bukkit.Color.SILVER, org.bukkit.Color.TEAL, org.bukkit.Color.WHITE, org.bukkit.Color.YELLOW));	
-	
-	   
+
+
       
       
     @Override
@@ -40,17 +41,17 @@ public class main extends JavaPlugin implements Listener {
 	@Override
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(this, this);
-		
-		
-	  }
-	
-	
-	
-	
 
-	
-	
-	
+
+	  }
+
+
+
+
+
+
+
+
 	public boolean onCommand(CommandSender sender, Command cmd, String label,
 			String[] args ) {
 		Player player = (Player) sender;
@@ -63,12 +64,12 @@ public class main extends JavaPlugin implements Listener {
                 }
         }
         
-	
+
 	return false;
 }
 
 
-	
+
 	ItemStack Bow = new ItemStack(Material.BOW);
 	{
 		ItemMeta itemmeta = Bow.getItemMeta();
@@ -91,6 +92,10 @@ public class main extends JavaPlugin implements Listener {
 	  @EventHandler 
 	  public void onBowShoot(EntityShootBowEvent event) {
     	Player player = (Player) event.getEntity();
+    	
+    	
+    	
+    	
     	if(player.hasPermission("fw.bow")){
     		
     		 FireworkMeta fireworkMeta = (FireworkMeta) (new ItemStack(
@@ -104,11 +109,28 @@ public class main extends JavaPlugin implements Listener {
     				  firework.setFireworkMeta(fireworkMeta);
     			     event.getProjectile().setPassenger(firework);
     		
+    	}else{
+    		player.sendMessage(ChatColor.RED + "You Don't Have Permission To Show The Bow!");
+    		event.setCancelled(true);
+    		ParticleEffects eff = ParticleEffects.ANGRY_VILLAGER;
+   		 Location playerLoc = player.getLocation();
+  	      if (!player.hasPermission("rank.donator")) {
+  	    	  try {
+  	                for (int i = 0; i < 10; i++)
+  	                {
+  	                    float x = (float) Math.random();
+  	                    float y = (float) Math.random();
+  	                    float z = (float) Math.random();
+  	                    eff.display( playerLoc, x, y, z, 1, 1);
+  	                    
+  	                }
+  	            } catch (Exception lol) {
+  	                lol.printStackTrace();
+  	            }
+    		
     	}
 	  }
 
-
-	
-	  
+ }
 	  
 }
