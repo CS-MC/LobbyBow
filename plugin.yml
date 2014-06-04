@@ -6,6 +6,6 @@ description: FireWork Bow!
 
 
 commands:
-    vipbow:
+    fwbow:
        usage: /<command>
        description: fwbow
