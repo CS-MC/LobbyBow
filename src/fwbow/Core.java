@@ -55,12 +55,12 @@ public class Core extends JavaPlugin implements Listener {
 	public boolean onCommand(CommandSender sender, Command cmd, String label,
 			String[] args ) {
 		Player player = (Player) sender;
-        if(cmd.getName().equalsIgnoreCase("vipbow")){
-        	if (player.hasPermission("vip.bow")) {	
+        if(cmd.getName().equalsIgnoreCase("fwbow")){
+        	if (player.hasPermission("fw.bow")) {	
     			Bow.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 10);
     			player.getInventory().addItem(new ItemStack[] { Bow });
     			player.getInventory().addItem(new ItemStack[] { Arrow });
-    			player.sendMessage(ChatColor.DARK_PURPLE + "Here is your vip bow!");
+    			player.sendMessage(ChatColor.DARK_PURPLE + "Here is your firework bow!");
                 }
         }
         
@@ -114,8 +114,7 @@ public class Core extends JavaPlugin implements Listener {
     		event.setCancelled(true);
     		ParticleEffects eff = ParticleEffects.ANGRY_VILLAGER;
    		 Location playerLoc = player.getLocation();
-  	      if (!player.hasPermission("rank.donator")) {
-  	    	  try {
+  	       try {
   	                for (int i = 0; i < 10; i++)
   	                {
   	                    float x = (float) Math.random();
@@ -126,10 +125,7 @@ public class Core extends JavaPlugin implements Listener {
   	                }
   	            } catch (Exception lol) {
   	                lol.printStackTrace();
-  	            }
-    		
-    	}
-	  }
+  	            }}
 
  }
 	  
