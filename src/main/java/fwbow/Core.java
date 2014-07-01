@@ -110,7 +110,7 @@ public class Core extends JavaPlugin implements Listener {
     			     event.getProjectile().setPassenger(firework);
     		
     	}else{
-    		player.sendMessage(ChatColor.RED + "You Don't Have Permission To Show The Bow!");
+    		player.sendMessage(ChatColor.RED + "You Don't Have Permission To Shot The Bow!");
     		event.setCancelled(true);
     		ParticleEffects eff = ParticleEffects.ANGRY_VILLAGER;
    		 Location playerLoc = player.getLocation();
