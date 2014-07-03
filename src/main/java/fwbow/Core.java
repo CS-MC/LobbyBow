@@ -61,7 +61,6 @@ public class Core extends JavaPlugin implements Listener {
     			player.getInventory().addItem(new ItemStack[] { Bow });
     			player.getInventory().addItem(new ItemStack[] { Arrow });
     			player.sendMessage(ChatColor.DARK_PURPLE + "Here is your firework bow!");
-				player.sendMessage(${project.version});
                 }
         }
         
